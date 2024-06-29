@@ -9,12 +9,13 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <form action="intro_carga.php" method="post">
+    <form action="Modelo/intro_carga.php" method="post">
         <div>
             <?php echo $_GET["Id"]; ?>
         </div>
+        <input type="text"  name="identificador" value="<?php echo $_GET["Id"]; ?>" hidden>
         <label for="fecha" class="etiqueta">Fecha:</label><br>
-        <input type="date" name="fecha" class="entrada" id="fecha"><br>
+        <input type="text" name="fecha" class="entrada" id="fecha"><br>
         <label for="numero" class="etiqueta">Número:</label><br>
         <input type="number" name="numero" class="entrada" id="numero"><br>
         <label for="cantidad" class="etiqueta">Cantidad:</label><br>
