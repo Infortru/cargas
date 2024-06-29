@@ -15,7 +15,7 @@
         </div>
         <input type="text"  name="identificador" value="<?php echo $_GET["Id"]; ?>" hidden>
         <label for="fecha" class="etiqueta">Fecha:</label><br>
-        <input type="text" name="fecha" class="entrada" id="fecha"><br>
+        <input type="text" name="fecha" class="entrada" id="fecha" placeholder="dd/mm/aa" ><br>
         <label for="numero" class="etiqueta">Número:</label><br>
         <input type="number" name="numero" class="entrada" id="numero"><br>
         <label for="cantidad" class="etiqueta">Cantidad:</label><br>

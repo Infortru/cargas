@@ -3,15 +3,14 @@
 
     include("conexion.php");
     
-    $nombre=$_GET["Nombre"];
-    $identificador=$_GET["Id"];
-    $numeroCarga=$_GET["Serie"];
+    $nombre=$_GET["nombre"];
+    $identificador=$_GET["id"];
+    $numeroCarga=$_GET["serie"];
+    $observaciones=$_GET["observaciones"];
     $fecha=date ("d-m-Y");
 
-    //include("../vista_rec_carga.php");
-
     try{
-    $sql="UPDATE $identificador SET FechaRecuperacion='$fecha', Estado='Recuperada', FirmadoRecuperacion='$nombre' WHERE NumeroSerie=$numeroCarga";
+    $sql="UPDATE $identificador SET FechaRecuperacion='$fecha', Estado='Recuperada', FirmadoRecuperacion='$nombre', Observaciones='$observaciones' WHERE NumeroSerie=$numeroCarga";
 
     $resultado=$conexion->prepare($sql);
     $resultado->execute(array());
@@ -19,7 +18,7 @@
         die ("Error" . $e->getMessage());
     }
 
-    //header("Location:../Vistas/Salones_alicante/florida.php");
+    header("Location:../Vistas/Salones_alicante/florida.php");
 
     ?>
 </body>

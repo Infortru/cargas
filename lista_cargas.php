@@ -28,6 +28,7 @@
     include("Modelo/conexion.php");
     echo $_GET["Id"];
     $identificador=$_GET["Id"];
+    $salon=$_GET["Salon"];
 
     try{
         $sql="SELECT * FROM $identificador";
@@ -45,11 +46,15 @@
                             <td><?php echo $fila["FechaRecuperacion"] ?></td>
                             <td><?php echo $fila["FirmadoRecuperacion"] ?></td>
                             <td><?php echo $fila["Observaciones"] ?></td>
-                            <td><button type="submit"><a href="Modelo/recuperar_carga.php?Serie=<?php echo $fila["NumeroSerie"]?>&Id=<?php echo $identificador?>">Recuperar</a></button></td>
+                            <?php
+                                if($fila["Estado"]!="Recuperada"){ ?>
+                            <td><button><a href="vista_rec_carga.php?Serie=<?php echo $fila["NumeroSerie"]?>&Id=<?php echo $identificador?>">Recuperar</a></button></td>
+                            <?php } ?>
                         </tr>
                     
             <?php } ?>
         </table>
+        <button><a href=<?php echo $salon ?>>Volver</a></button>
         
     <?php
     $resultado->closeCursor();
