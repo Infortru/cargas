@@ -16,7 +16,7 @@
             <th>NÚMERO</th>
             <th>CANTIDAD</th>
             <th>TÉCNICO</th>
-            <th>RECUPERADA</th>
+            <th>ESTADO</th>
             <th>FECHA RECUPERACIÓN</th>
             <th>FIRMADO RECUPERACIÓN</th>
             <th>OBSERVACIONES</th>
@@ -41,10 +41,11 @@
                             <td><?php echo $fila["NumeroSerie"] ?></td>
                             <td><?php echo $fila["Cantidad"] ?></td>
                             <td><?php echo $fila["Firmado"] ?></td>
-                            <td><?php echo $fila["Recuperada"] ?></td>
+                            <td><?php echo $fila["Estado"] ?></td>
                             <td><?php echo $fila["FechaRecuperacion"] ?></td>
                             <td><?php echo $fila["FirmadoRecuperacion"] ?></td>
                             <td><?php echo $fila["Observaciones"] ?></td>
+                            <td><button type="submit"><a href="Modelo/recuperar_carga.php?Serie=<?php echo $fila["NumeroSerie"]?>&Id=<?php echo $identificador?>">Recuperar</a></button></td>
                         </tr>
                     
             <?php } ?>
