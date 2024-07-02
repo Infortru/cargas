@@ -9,21 +9,21 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <form action="Modelo/intro_carga.php" method="post">
+    <form action="Modelo/intro_carga.php" method="post" id="formulario">
         <div>
             <?php echo $_GET["Id"]; ?>
         </div>
         <input type="text"  name="identificador" value="<?php echo $_GET["Id"]; ?>" hidden>
-        <label for="fecha" class="etiqueta">Fecha:</label><br>
-        <input type="text" name="fecha" class="entrada" id="fecha" placeholder="dd/mm/aa" ><br>
-        <label for="numero" class="etiqueta">Número:</label><br>
-        <input type="number" name="numero" class="entrada" id="numero"><br>
-        <label for="cantidad" class="etiqueta">Cantidad:</label><br>
-        <input type="number" name="cantidad" class="entrada" id="cantidad"><br>
-        <label for="técnico" class="etiqueta">Técnico:</label><br>
-        <input type="text" name="tecnico" class="entrada" id="tecnico"><br><br>
-        <input type="submit" value="Aceptar">
+        <label for="fecha">Fecha:</label><br>
+        <input type="text" name="fecha" id="fecha" placeholder="dd/mm/aa" ><br>
+        <label for="numero">Número:</label><br>
+        <input type="number" name="numero" id="numero"><br>
+        <label for="cantidad">Cantidad:</label><br>
+        <input type="number" name="cantidad" id="cantidad"><br>
+        <label for="técnico">Técnico:</label><br>
+        <input type="text" name="tecnico" id="tecnico"><br><br>
+        <input type="submit" value="Aceptar" id="enviar" disabled>
     </form>
-    
+    <script src="validar_nueva_carga.js"></script>
 </body>
 </html>
