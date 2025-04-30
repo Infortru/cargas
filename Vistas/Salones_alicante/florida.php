@@ -26,13 +26,14 @@
         while($fila=$resultado->fetch(PDO::FETCH_ASSOC)){
     ?>
         <tr>
-            <td><?php echo $fila["Identificador"] ?></td>
-            <td><?php echo $fila["Nombre"] ?></td>
-            <td><button><a href="../../nueva_carga.php?Id=<?php echo $fila["Identificador"]?>">Nueva</a></button></td>
-            <td><button><a href="../../lista_cargas.php?Id=<?php echo $fila["Identificador"]?>&Salon=Vistas/Salones_alicante/florida.php">Lista</a></button></td>
+            <td><?php echo $fila["identificador"] ?></td>
+            <td><?php echo $fila["nombre"] ?></td>
+            <td><button><a href="../../nueva_carga.php?Id=<?php echo $fila["identificador"]?>">Nueva</a></button></td>
+            <td><button><a href="../../lista_cargas.php?Id=<?php echo $fila["identificador"]?>&Salon=Vistas/Salones_alicante/florida.php">Lista</a></button></td>
         </tr>
+    </table>
     <?php
-       };
+        };
     ?>
    
 </body>

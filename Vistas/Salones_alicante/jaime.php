@@ -9,18 +9,31 @@
     <script src='main.js'></script>
 </head>
 <body>
+    <h2>Listado de máquinas del Salón Jaime Segarra</h2>
+    
+    <table>
+        <tr>
+            <th>Identificador</th>
+            <th>Denominación</th>
+        </tr>
     <?php
-         try{
-            $conexion = new PDO ("mysql: host=localchost; dbname=magarin", "root", "");
-            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Conexión OK";
-        }catch(Exception $e) {
-            die ("Error" . $e->getMessage());
-        }finally{
-            $conexion=null;
-        }
-    
-    
+        require("../../Modelo/conexion.php");
+
+        $consulta="SELECT * FROM jaime";
+        $resultado=$conexion->prepare($consulta);
+        $resultado->execute(array());
+
+        while($fila=$resultado->fetch(PDO::FETCH_ASSOC)){
+    ?>
+            <tr>
+                <td><?php echo $fila["identificador"] ?></td>
+                <td><?php echo $fila["nombre"] ?></td>
+                <td><button><a href="../../nueva_carga.php?Id=<?php echo $fila["identificador"]?>">Nueva</a></button></td>
+                <td><button><a href="../../lista_cargas.php?Id=<?php echo $fila["identificador"]?>&Salon=Vistas/Salones_alicante/florida.php">Lista</a></button></td>
+            </tr>
+        </table>
+    <?php
+        };
     
     
     ?>
