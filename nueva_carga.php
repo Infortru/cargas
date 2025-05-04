@@ -10,11 +10,11 @@
 </head>
 <body>
     <div>
-        <h4 class="text-center">Introducir nueva carga de la máquina: </h4>    
+        <h4 class="text-center">Introducir nueva carga de la máquina: </h4>
     </div> 
     <form action="Modelo/intro_carga.php" method="post" id="formulario" style="width: 30%; margin: auto;">
         <label for="identificador" class="form-label">Identificador:</label><br>
-        <input type="text" name="identificador" class="form-control" id="identificador" disabled value="<?php echo $_GET["Id"]; ?>">  
+        <input type="text" name="identificador" class="form-control" id="identificador" value="<?php echo $_GET["Id"]; ?>">  
         <label for="fecha" class="form-label">Fecha:</label>
         <input type="text" name="fecha" id="fecha" class="form-control" placeholder="dd/mm/aa" >
         <label for="numero" class="form-label">Número:</label>

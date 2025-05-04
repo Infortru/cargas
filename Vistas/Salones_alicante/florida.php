@@ -37,7 +37,7 @@
             <td><?php echo $fila["identificador"] ?></td>
             <td><?php echo $fila["nombre"] ?></td>
             <td>
-                <a href="../../nueva_carga.php?Id=<?php echo $fila["identificador"]?>" class="btn btn-primary">Nueva</a>
+                <a href="../../nueva_carga.php?Id=<?php echo $fila["identificador"]?>&Salon=Vistas/Salones_alicante/florida.php" class="btn btn-primary">Nueva</a>
                 <a href="../../lista_cargas.php?Id=<?php echo $fila["identificador"]?>&Salon=Vistas/Salones_alicante/florida.php" class="btn btn-primary">Lista</a>
             </td>
         </tr>
