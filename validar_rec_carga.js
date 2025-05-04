@@ -9,7 +9,7 @@ let expresiones={
 }
 
 let entradas={
-    fecha: false,
+    fecha: true,
     tecnico: false
 }
 

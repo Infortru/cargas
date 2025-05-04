@@ -13,7 +13,7 @@
         <input type="text"  name="id" value="<?php echo $_GET["Id"]; ?>" hidden>
         <input type="text"  name="serie" value="<?php echo $_GET["Serie"]; ?>" hidden>
         <label for="fecha">Fecha:</label><br>
-        <input type="text" name="fecha" id="fecha" placeholder="dd/mm/aa" ><br>
+        <input type="text" name="fecha" id="fecha" value="<?php echo date('d/m/y') ?>" ><br>
         <label for="tecnico">Nombre:</label><br>
         <input type="text" name="tecnico" id="tecnico"><br><br>
         <label for="obervaciones">Observaciones:</label><br>
