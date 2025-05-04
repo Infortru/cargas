@@ -5,13 +5,13 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Cargas</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' href='bootstrap.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    
-    <table width="50%">
-        <thead>
+    <h3>Listado de cargas de la máquina: </h3>
+    <table class="table table-striped table-bordered table-hover" width="50%" cellspacing="0">
+        <thead class="table table-primary">
             <th>FECHA</th>
             <th>NÚMERO</th>
             <th>CANTIDAD</th>
@@ -48,14 +48,14 @@
                             <td><?php echo $fila["Observaciones"] ?></td>
                             <?php
                                 if($fila["Estado"]!="Recuperada"){ ?>
-                            <td><button><a href="vista_rec_carga.php?Serie=<?php echo $fila["NumeroSerie"]?>&Id=<?php echo $identificador?>">Recuperar</a></button></td>
+                            <td><button><a href="rec_carga.php?Serie=<?php echo $fila["NumeroSerie"]?>&Id=<?php echo $identificador?>">Recuperar</a></button></td>
                             <?php } ?>
                         </tr>
                     
             <?php } ?>
         </table>
-        <button><a href=<?php echo $salon ?>></a>Volver</a></button>
-        
+        <a href="<?php echo $salon ?>" class="btn btn-primary">Volver</a>
+         
     <?php
     $resultado->closeCursor();
     }catch(Exception $e) {
