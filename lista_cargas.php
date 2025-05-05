@@ -9,7 +9,7 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <h3>Listado de cargas de la máquina: </h3>
+    
     <table class="table table-striped table-bordered table-hover" width="50%" cellspacing="0">
         <thead class="table table-primary">
             <th>FECHA</th>
@@ -20,13 +20,14 @@
             <th>FECHA RECUPERACIÓN</th>
             <th>FIRMADO RECUPERACIÓN</th>
             <th>OBSERVACIONES</th>
+            <th>ACCIONES</th>
         </thead>
 
 
 <?php
 
     include("Modelo/conexion.php");
-    echo $_GET["Id"];
+    echo '<h4>Listado de cargas de la máquina: ' . $_GET["Id"] . '</h4>';
     $identificador=$_GET["Id"];
     $salon=$_GET["Salon"];
 
@@ -48,7 +49,7 @@
                             <td><?php echo $fila["Observaciones"] ?></td>
                             <?php
                                 if($fila["Estado"]!="Recuperada"){ ?>
-                            <td><button><a href="rec_carga.php?Serie=<?php echo $fila["NumeroSerie"]?>&Id=<?php echo $identificador?>">Recuperar</a></button></td>
+                            <td><a href="rec_carga.php?Serie=<?php echo $fila["NumeroSerie"]?>&Id=<?php echo $identificador?>" class="btn btn-primary">Recuperar</a></td>
                             <?php } ?>
                         </tr>
                     

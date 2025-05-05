@@ -13,8 +13,10 @@
         <h4 class="text-center">Introducir nueva carga de la máquina: </h4>
     </div> 
     <form action="Modelo/intro_carga.php" method="post" id="formulario" style="width: 30%; margin: auto;">
-        <label for="identificador" class="form-label">Identificador:</label><br>
+        <label for="identificador" class="form-label">Identificador:</label>
         <input type="text" name="identificador" class="form-control" id="identificador" value="<?php echo $_GET["Id"]; ?>">  
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" name="nombre" class="form-control" id="nombre" value="<?php echo $_GET["Nombre"]; ?>">
         <label for="fecha" class="form-label">Fecha:</label>
         <input type="text" name="fecha" id="fecha" class="form-control" value="<?php echo date('d/m/y') ?>" autofocus>
         <label for="numero" class="form-label">Número:</label>

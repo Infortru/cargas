@@ -14,6 +14,7 @@
     include("conexion.php");
 
     $identificador=$_POST["identificador"];
+    $nombre=$_POST["nombre"];
     $fecha=$_POST["fecha"];
     $numero=$_POST["numero"];
     $cantidad=$_POST["cantidad"];
@@ -25,7 +26,7 @@
     $fila=$resultado->fetch(PDO::FETCH_ASSOC);
     if($fila){
         echo "<h3 class='text-danger'>El número de serie ya existe en la base de datos.</h3>";
-        echo "<br><a href='../nueva_carga.php?Id=$identificador&Salon=Vistas/Salones_alicante/florida.php' class='btn btn-primary'>Volver</a>";
+        echo "<br><a href='../nueva_carga.php?Id=$identificador&Nombre=$nombre&Salon=Vistas/Salones_alicante/florida.php' class='btn btn-primary'>Volver</a>";
         exit();
     }else{
     $sql="CREATE TABLE IF NOT EXISTS $identificador (Fecha DATE, NumeroSerie INT, Cantidad INT, Firmado VARCHAR(50), Estado VARCHAR(50), FechaRecuperacion DATE, FirmadoRecuperacion VARCHAR(50), Observaciones TEXT)";
@@ -36,7 +37,7 @@
     $resultado->execute();
     $resultado->closeCursor();
 
-    header("Location: ../nueva_carga.php?Id=$identificador&Salon=Vistas/Salones_alicante/florida.php");
+    header("Location: ../nueva_carga.php?Id=$identificador&Nombre=$nombre&Salon=Vistas/Salones_alicante/florida.php");
     }
     ?>
     
