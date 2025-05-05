@@ -16,7 +16,7 @@
         <label for="identificador" class="form-label">Identificador:</label><br>
         <input type="text" name="identificador" class="form-control" id="identificador" value="<?php echo $_GET["Id"]; ?>">  
         <label for="fecha" class="form-label">Fecha:</label>
-        <input type="text" name="fecha" id="fecha" class="form-control" placeholder="dd/mm/aa" >
+        <input type="text" name="fecha" id="fecha" class="form-control" value="<?php echo date('d/m/y') ?>" autofocus>
         <label for="numero" class="form-label">Número:</label>
         <input type="number" name="numero" id="numero" class="form-control">
         <label for="cantidad" class="form-label">Cantidad:</label>
