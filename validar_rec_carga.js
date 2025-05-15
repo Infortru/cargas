@@ -4,7 +4,7 @@ let formulario = document.getElementById('formulario');
 let inputs = document.querySelectorAll('#formulario input');
 
 let expresiones={
-    //fecha: /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{2}$/,
+    fecha: /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{2}$/,
     tecnico: /^[a-zA-ZÀ-ÿ\s]{4,15}$/
 }
 

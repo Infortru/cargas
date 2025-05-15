@@ -6,7 +6,6 @@
     <title>Cargas</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' href='bootstrap.css'>
-    <script src='main.js'></script>
 </head>
 <body>
     
@@ -26,7 +25,7 @@
 
 <?php
 
-    include("Modelo/conexion.php");
+    include("./Modelo/conexion.php");
     echo '<h4>Listado de cargas de la máquina: ' . $_GET["Id"] . '</h4>';
     $identificador=$_GET["Id"];
     $salon=$_GET["Salon"];
@@ -49,7 +48,7 @@
                             <td><?php echo $fila["Observaciones"] ?></td>
                             <?php
                                 if($fila["Estado"]!="Recuperada"){ ?>
-                            <td><a href="rec_carga.php?Serie=<?php echo $fila["NumeroSerie"]?>&Id=<?php echo $identificador?>" class="btn btn-primary">Recuperar</a></td>
+                            <td><a href="rec_carga.php?Serie=<?php echo $fila["NumeroSerie"]?>&Id=<?php echo $identificador?>&Salon=<?php echo $salon?>" class="btn btn-primary">Recuperar</a></td>
                             <?php } ?>
                         </tr>
                     

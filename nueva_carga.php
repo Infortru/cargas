@@ -9,14 +9,14 @@
     <script src='main.js'></script>
 </head>
 <body>
+    
     <div>
         <h4 class="text-center">Introducir nueva carga de la máquina: </h4>
     </div> 
     <form action="Modelo/intro_carga.php" method="post" id="formulario" style="width: 30%; margin: auto;">
+        <input type="hidden" name="Salon" id="Salon" value="<?php echo $_GET["Salon"]?>">
         <label for="identificador" class="form-label">Identificador:</label>
         <input type="text" name="identificador" class="form-control" id="identificador" value="<?php echo $_GET["Id"]; ?>">  
-        <label for="nombre" class="form-label">Nombre:</label>
-        <input type="text" name="nombre" class="form-control" id="nombre" value="<?php echo $_GET["Nombre"]; ?>">
         <label for="fecha" class="form-label">Fecha:</label>
         <input type="text" name="fecha" id="fecha" class="form-control" value="<?php echo date('d/m/y') ?>" autofocus>
         <label for="numero" class="form-label">Número:</label>
@@ -26,7 +26,7 @@
         <label for="técnico" class="form-label">Técnico:</label>
         <input type="text" name="tecnico" id="tecnico" class="form-control">
         <input type="submit" value="Aceptar" id="enviar" disabled class="btn btn-primary" style="margin-top: 10px;">
-        <a href="<?php echo $_GET["Salon"] ?>" class="btn btn-primary" style="margin-top: 10px;">Volver</a>
+        <a href="<?php echo $_GET["Salon"]?>" class="btn btn-primary" style="margin-top: 10px;">Volver</a>
     </form>
     <script src="validar_nueva_carga.js"></script>
 </body>
